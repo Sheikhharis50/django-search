@@ -1,0 +1,290 @@
+[
+    {
+        "model": "search.product",
+        "pk": 126,
+        "fields": {
+            "name": "Headless + Omnichannel in a pill",
+            "slug": "headless-omnichannel-commerce",
+            "description": "Launch new markets fast"
+        }
+    },
+    {
+        "model": "search.product",
+        "pk": 127,
+        "fields": {
+            "name": "White Plimsolls",
+            "slug": "white-plimsolls",
+            "description": "PE at school wouldn't have been such a drag with these on your feet. Slip on the style and stride tall with Saleor branded plimsolls. PE now stands for pretty elegant."
+        }
+    },
+    {
+        "model": "search.product",
+        "pk": 128,
+        "fields": {
+            "name": "Blue Plimsolls",
+            "slug": "blue-plimsolls",
+            "description": "Step into summer with Saleor. Every time your head goes down, you see these beauties, and your mood bounces right back up."
+        }
+    },
+    {
+        "model": "search.product",
+        "pk": 129,
+        "fields": {
+            "name": "Dash Force",
+            "slug": "dash-force",
+            "description": "Step into summer with the right balance.&nbsp;Every time your head goes down, you see these beauties, and your mood bounces right back up."
+        }
+    },
+    {
+        "model": "search.product",
+        "pk": 130,
+        "fields": {
+            "name": "Paul's Balance 420",
+            "slug": "balance-trail-720",
+            "description": "Step into summer with the right balance.&nbsp;Every time your head goes down, you see these beauties, and your mood bounces right back up."
+        }
+    },
+    {
+        "model": "search.product",
+        "pk": 131,
+        "fields": {
+            "name": "Grey Hoodie",
+            "slug": "grey-hoodie",
+            "description": ""
+        }
+    },
+    {
+        "model": "search.product",
+        "pk": 132,
+        "fields": {
+            "name": "Blue Hoodie",
+            "slug": "blue-hoodie",
+            "description": ""
+        }
+    },
+    {
+        "model": "search.product",
+        "pk": 133,
+        "fields": {
+            "name": "White Hoodie",
+            "slug": "white-hoodie",
+            "description": ""
+        }
+    },
+    {
+        "model": "search.product",
+        "pk": 134,
+        "fields": {
+            "name": "Monospace Tee",
+            "slug": "ascii-tee",
+            "description": "Your t-shirt is your second skin. It's the version of you that you show to the world. Wear the Monospace one that flows with your command line kung-fu moves!&nbsp;"
+        }
+    },
+    {
+        "model": "search.product",
+        "pk": 135,
+        "fields": {
+            "name": "Team Shirt",
+            "slug": "team-shirt",
+            "description": "One style fits all. Get a look that works even when you are taking it easy. Relaxed wear for the fans."
+        }
+    },
+    {
+        "model": "search.product",
+        "pk": 136,
+        "fields": {
+            "name": "Darko Polo",
+            "slug": "darko-polo",
+            "description": "Ever have those days where you feel a bit geometric?&nbsp;Can't quite shape yourself up right? Show your different sides with a Saleor styles."
+        }
+    },
+    {
+        "model": "search.product",
+        "pk": 137,
+        "fields": {
+            "name": "Blue Polygon Shirt",
+            "slug": "blue-polygon-shirt",
+            "description": "Ever have those days where you feel a bit geometric? Can't quite shape yourself up right? Show your different sides with a Saleor styles."
+        }
+    },
+    {
+        "model": "search.product",
+        "pk": 138,
+        "fields": {
+            "name": "Dark Polygon Tee",
+            "slug": "dark-polygon-tee",
+            "description": "Ever have those days where you feel a bit geometric? Can't quite shape yourself up right? Show your different sides with a Saleor styles."
+        }
+    },
+    {
+        "model": "search.product",
+        "pk": 141,
+        "fields": {
+            "name": "Pirate's Beanie",
+            "slug": "pirates-beanie",
+            "description": ""
+        }
+    },
+    {
+        "model": "search.product",
+        "pk": 143,
+        "fields": {
+            "name": "Neck Warmer",
+            "slug": "tactical-neck-warmer",
+            "description": ""
+        }
+    },
+    {
+        "model": "search.product",
+        "pk": 144,
+        "fields": {
+            "name": "DRY Sunglasses",
+            "slug": "dry-sunglasses",
+            "description": ""
+        }
+    },
+    {
+        "model": "search.product",
+        "pk": 145,
+        "fields": {
+            "name": "Battle-tested at brands like Lush",
+            "slug": "battle-tested-at-brands-like-lush",
+            "description": "Scale effortlessly"
+        }
+    },
+    {
+        "model": "search.product",
+        "pk": 146,
+        "fields": {
+            "name": "Enterprise Cloud + On-premises",
+            "slug": "enterprise-cloud-on-premises-tales",
+            "description": "Open Source without the DevOps"
+        }
+    },
+    {
+        "model": "search.product",
+        "pk": 147,
+        "fields": {
+            "name": "Own your stack and data",
+            "slug": "own-your-stack-and-data",
+            "description": "Own your investment, ditch vendor lock-in"
+        }
+    },
+    {
+        "model": "search.product",
+        "pk": 150,
+        "fields": {
+            "name": "Mighty Mug",
+            "slug": "mighty-mug",
+            "description": "Tonight, my love, let us take fat brushes and paint the skies with the shades of nebula tides. Best for the darkest, moody shades of the coffee you can brew."
+        }
+    },
+    {
+        "model": "search.product",
+        "pk": 151,
+        "fields": {
+            "name": "The Dash Cushion",
+            "slug": "the-dash-cushion",
+            "description": "Minimalist interiors need simple, sleek soft furnishings. Set your own trends with Saleor designs."
+        }
+    },
+    {
+        "model": "search.product",
+        "pk": 152,
+        "fields": {
+            "name": "Apple Juice",
+            "slug": "apple-juice",
+            "description": "Fell straight from the tree, on to Newton's head, then into the bottle. The autumn taste of English apples. Brought to you by gravity."
+        }
+    },
+    {
+        "model": "search.product",
+        "pk": 153,
+        "fields": {
+            "name": "Bean Juice",
+            "slug": "bean-juice",
+            "description": "Bean there, drunk that! The energy drink for the health-conscious. Brand new bean juice; from allotment to bottle in under 8 hours."
+        }
+    },
+    {
+        "model": "search.product",
+        "pk": 154,
+        "fields": {
+            "name": "Banana Juice",
+            "slug": "banana-juice",
+            "description": "Build your protein the natural way, with exotic banana juice made from ripe fruit and packed with all the goodness of the tropical sun."
+        }
+    },
+    {
+        "model": "search.product",
+        "pk": 155,
+        "fields": {
+            "name": "Carrot Juice",
+            "slug": "carrot-juice",
+            "description": "Improve your eyesight the natural way with 100% pure, squeezed carrot juice. The sweet, orange nectar of Mother Earth."
+        }
+    },
+    {
+        "model": "search.product",
+        "pk": 156,
+        "fields": {
+            "name": "Monokai Dimmed Sunnies",
+            "slug": "monokai-dimmed-sunnies",
+            "description": ""
+        }
+    },
+    {
+        "model": "search.product",
+        "pk": 157,
+        "fields": {
+            "name": "Reversed Monotype Tee",
+            "slug": "reversed-monotype-tee",
+            "description": "Wondering if this will look as good on you as it does on the screen? The answer is yes. A quality Monospace Tee variant art with smart styling."
+        }
+    },
+    {
+        "model": "search.product",
+        "pk": 160,
+        "fields": {
+            "name": "Gift card 100",
+            "slug": "gift-card",
+            "description": "Gift card to use in the shop."
+        }
+    },
+    {
+        "model": "search.product",
+        "pk": 161,
+        "fields": {
+            "name": "Cubes Fountain Tee",
+            "slug": "cubes-fountain-tee",
+            "description": "There is life in outer space. This vibrant light speed cubes brings life to any surface. Goes on easy and dries at light speed."
+        }
+    },
+    {
+        "model": "search.product",
+        "pk": 162,
+        "fields": {
+            "name": "White Parrot Cushion",
+            "slug": "white-parrot-cusion",
+            "description": "Minimalist interiors need simple, sleek soft furnishings. Don't parrot what others do, set your own monochrome trends with Saleor designs."
+        }
+    },
+    {
+        "model": "search.product",
+        "pk": 163,
+        "fields": {
+            "name": "Gift card 500",
+            "slug": "gift-card-500",
+            "description": ""
+        }
+    },
+    {
+        "model": "search.product",
+        "pk": 164,
+        "fields": {
+            "name": "Gift card 50",
+            "slug": "gift-card-50",
+            "description": ""
+        }
+    }
+]
