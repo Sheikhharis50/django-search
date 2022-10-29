@@ -2,7 +2,7 @@ from django.db.models.signals import pre_save
 from django.dispatch import receiver
 
 from .models import Product
-from .search import prep_product_search_vector_index
+from .utils import prep_product_search_vector_index
 
 
 @receiver(pre_save, sender=Product)

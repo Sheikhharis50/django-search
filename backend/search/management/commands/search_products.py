@@ -1,34 +1,17 @@
+import asyncio
 import os
-from functools import reduce
 from typing import Dict, List, Tuple
 
 from django.conf import settings
-from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector
 from django.core.management.base import BaseCommand
 from django.db import models
-
 from search.models import Product
-from search.search import prep_product_search_vector_index
+from search.services import SearchService
+from search.utils import prep_product_search_vector_index
 
 
 class Command(BaseCommand):
     help = "Search Products"
-
-    # total four weights are supported by postgres for relevancy
-    # we can customize their values.
-    # key: weight
-    WEIGHTS = {
-        "A": 0.8,
-        "B": 0.6,
-        "C": 0.4,
-        "D": 0.2,
-    }
-    # set weights to tell how much relevancy we wants for each field
-    # field_name: weight_key
-    PRODUCT_SEARCH_FIELDS = {
-        "name": "B",
-        "description": "A",
-    }
 
     def add_arguments(self, parser) -> None:
         parser.add_argument(
@@ -36,11 +19,6 @@ class Command(BaseCommand):
             action="store_true",
             help="Index all products first before performing search.",
         )
-
-    def get_weights(self) -> List[float]:
-        weights = list(self.WEIGHTS.values())
-        weights.sort()
-        return weights
 
     def print_products(self, products: models.QuerySet[Product]):
         for i, p in enumerate(products):
@@ -109,7 +87,8 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         colums = ["pk", "name", "price", "rank", "description"]
-        products = Product.objects.all()
+        service = SearchService()
+        products = service.get_products()
 
         self.handle_options(products, **options)
 
@@ -120,39 +99,15 @@ class Command(BaseCommand):
             match choice:
                 case 1:
                     query = self.input_query()
-                    products = Product.objects.filter(
-                        models.Q(name__search=query)
-                        | models.Q(description__search=query)
-                    )
+                    products = service.normal_search(query)
 
                 case 2:
-                    products = Product.objects.annotate(
-                        search=SearchVector(*list(self.PRODUCT_SEARCH_FIELDS.keys()))
-                    ).filter(search=self.input_query())
+                    query = self.input_query()
+                    products = service.vector_search(query)
 
                 case 3:
-                    vectors = [
-                        SearchVector(
-                            field,
-                            weight=weight,
-                        )
-                        for field, weight in self.PRODUCT_SEARCH_FIELDS.items()
-                    ]
-                    query = SearchQuery(
-                        self.input_query(), search_type="websearch", config="english"
-                    )
-                    weights = self.get_weights()
-                    products = (
-                        Product.objects.annotate(
-                            rank=SearchRank(
-                                reduce(lambda v1, v2: v1 + v2, vectors),
-                                query,
-                                weights=weights,
-                            ),
-                        )
-                        .filter(rank__gte=0.01)
-                        .order_by("-rank")
-                    )
+                    query = self.input_query()
+                    products = service.ranking_search(query)
 
                 case 4:
                     pass
@@ -164,6 +119,7 @@ class Command(BaseCommand):
                     self.print_interrupt_message("Invalid Choice")
                     continue
 
+            products = asyncio.run(products)
             print(f"{products.count()} products were found.")
             # self.print_result(choices[choice], products)
             self.print_result_to_file(products, colums)
