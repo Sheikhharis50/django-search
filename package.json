@@ -1,0 +1,23 @@
+{
+  "name": "django-search",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start:frontend": "cd frontend && npm run dev",
+    "start:backend": "cd backend && python manage.py runserver",
+    "start": "concurrently \"npm run start:frontend\" \"npm run start:backend\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sheikhharis50/django-search.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sheikhharis50/django-search/issues"
+  },
+  "homepage": "https://github.com/Sheikhharis50/django-search#readme",
+  "dependencies": {
+    "concurrently": "^7.5.0"
+  }
+}

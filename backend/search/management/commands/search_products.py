@@ -8,6 +8,7 @@ from django.core.management.base import BaseCommand
 from django.db import models
 
 from search.models import Product
+from search.search import prep_product_search_vector_index
 
 
 class Command(BaseCommand):
@@ -30,7 +31,11 @@ class Command(BaseCommand):
     }
 
     def add_arguments(self, parser) -> None:
-        return super().add_arguments(parser)
+        parser.add_argument(
+            "--index",
+            action="store_true",
+            help="Index all products first before performing search.",
+        )
 
     def get_weights(self) -> List[float]:
         weights = list(self.WEIGHTS.values())
@@ -98,9 +103,15 @@ class Command(BaseCommand):
 
             print("Invalid Query")
 
+    def handle_options(self, products: models.QuerySet[Product], **options):
+        if options.get("index", False):
+            prep_product_search_vector_index(products)
+
     def handle(self, *args, **options):
         colums = ["pk", "name", "price", "rank", "description"]
-        products = models.QuerySet(model=Product)
+        products = Product.objects.all()
+
+        self.handle_options(products, **options)
 
         while True:
             os.system("clear")
@@ -139,12 +150,12 @@ class Command(BaseCommand):
                                 weights=weights,
                             ),
                         )
-                        .filter(rank__gte=0.3)
+                        .filter(rank__gte=0.01)
                         .order_by("-rank")
                     )
 
                 case 4:
-                    products = Product.objects.all()
+                    pass
 
                 case 5:
                     exit(0)
@@ -154,7 +165,7 @@ class Command(BaseCommand):
                     continue
 
             print(f"{products.count()} products were found.")
-            self.print_result(choices[choice], products)
+            # self.print_result(choices[choice], products)
             self.print_result_to_file(products, colums)
 
             self.print_interrupt_message()

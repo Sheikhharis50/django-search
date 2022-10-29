@@ -131,3 +131,5 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 OUTPUT_DIR = os.path.join(BASE_DIR, "output")
+if not os.path.exists(OUTPUT_DIR):
+    os.mkdir(OUTPUT_DIR)
