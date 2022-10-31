@@ -1,8 +1,9 @@
 from datetime import datetime
 
+from django.http.request import HttpRequest
+
 from core.response import make_response
 from core.views import BaseAsyncView
-from django.http.request import HttpRequest
 
 from .services import SearchService
 
@@ -10,10 +11,16 @@ from .services import SearchService
 class SearchView(BaseAsyncView):
     async def with_time(self, method, *args, **kwargs):
         start_time = datetime.now()
-        result = await method(*args, **kwargs) if callable(method) else []
+        result = []
+        type = ""
+        if callable(method):
+            result = await method(*args, **kwargs)
+            type = method.__name__[1:]
+
         return {
             "time_taken": f"{(datetime.now()-start_time).total_seconds():.4f} secs.",
             "records": len(result),
+            "type": type,
             "result": result,
         }
 
