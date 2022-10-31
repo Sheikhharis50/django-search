@@ -5,6 +5,7 @@ from typing import Dict, List, Tuple
 from django.conf import settings
 from django.core.management.base import BaseCommand
 from django.db import models
+
 from search.models import Product
 from search.services import SearchService
 from search.utils import prep_product_search_vector_index
